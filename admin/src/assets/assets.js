@@ -16,4 +16,4 @@ export const assets ={
     profile_picture
 }
 
-export const url = 'http://localhost:4000'
+export const url = 'https://food-del-backend-vz5s.onrender.com'
