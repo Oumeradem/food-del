@@ -4,34 +4,40 @@
     justify-content: space-between;
     gap: 50px;
     margin-top: 100px;
-
 }
 
 .place-order-left {
     width: 100%;
     max-width: max(30%, 500px);
-
 }
 
 .place-order-left .title {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin-bottom: 40px;
 }
 
 .place-order-left input {
     margin-bottom: 15px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #c5c5c5;
-    border-radius: 4px;
-    outline: tomato;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    background: var(--surface-alt);
+    transition: border-color var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.place-order-left input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 92, 53, 0.12);
 }
 
 .place-order-left .multi-filds {
     display: flex;
     gap: 10px;
-
 }
 
 .place-order-right {

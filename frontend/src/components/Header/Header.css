@@ -1,10 +1,26 @@
 /* Hero section sized proportionally to viewport width */
 .header {
   height: 34vw;
+  min-height: 320px;
   margin: 30px auto;
-  background: url('/header_img.png') no-repeat;
-  background-size: contain;
+  background: url('/header_img.png') no-repeat center / contain;
   position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Soft gradient overlay for legibility */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.12) 55%,
+    transparent 80%
+  );
+  pointer-events: none;
 }
 
 /* Text block pinned to bottom-left of the hero image */
@@ -13,33 +29,47 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 1.5vw;
+  gap: 1.4vw;
   max-width: 50%;
   bottom: 10%;
   left: 6vw;
-  animation: fadeIn 3s;
+  animation: fadeUp 0.9s var(--ease);
 }
 
 .header-contents h2 {
-  font-weight: 500;
+  font-weight: 700;
   color: white;
-  font-size: max(4.5vw, 22px);
+  font-size: max(4vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .header-contents p {
-  color: white;
-  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: max(1vw, 14px);
+  line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .header-contents button {
   border: none;
-  color: #747474;
-  font-weight: 500;
-  padding: 1vw 2.3vw;
+  color: var(--text);
+  font-weight: 600;
+  padding: 1vw 2.6vw;
   background-color: white;
-  font-size: max(1vw, 13px);
-  border-radius: 50px;
+  font-size: max(1vw, 14px);
+  border-radius: var(--radius-full);
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transition: all var(--speed) var(--ease);
+}
+
+.header-contents button:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
 }
 
 @media (max-width: 1050px) {
@@ -49,6 +79,11 @@
 }
 
 @media (max-width: 750px) {
+  .header {
+    height: 70vw;
+    min-height: 240px;
+  }
+
   .header-contents {
     max-width: 65%;
   }

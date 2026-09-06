@@ -1,31 +1,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-*{
+
+/* ============================================================
+   DESIGN TOKENS — global custom properties
+   Single source of truth for colors, spacing, type, shadow
+   ============================================================ */
+:root {
+  /* Brand palette — refined tomato/orange */
+  --primary: #ff5c35;
+  --primary-dark: #e84a24;
+  --primary-soft: #fff1ec;
+  --primary-border: #ffc9b8;
+
+  /* Neutrals */
+  --text: #2d2d2d;
+  --text-strong: #1a1a1a;
+  --text-muted: #6b7280;
+  --text-faint: #9ca3af;
+  --border: #e7e7e7;
+  --surface: #ffffff;
+  --surface-alt: #fafafa;
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  /* Typography scale */
+  --font-display: 2.6rem;
+  --font-h1: 2rem;
+  --font-h2: 1.5rem;
+  --font-h3: 1.25rem;
+  --font-base: 1rem;
+  --font-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-primary: 0 8px 20px rgba(255, 92, 53, 0.28);
+
+  /* Motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.25s;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: outfit;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
   scroll-behavior: smooth;
 }
-body{
+
+body {
   min-height: 100vh;
+  color: var(--text);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-.app{
-  width: 80%;
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  width: 82%;
+  max-width: 1320px;
   margin: auto;
 }
 
+/* Reusable focus ring for accessibility */
+:focus-visible {
+  outline: 3px solid var(--primary-border);
+  outline-offset: 2px;
+}
+
+/* Shared keyframes */
 @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-  0%{
-    opacity: 0;
-  }
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-  100%{
-    opacity: 1;
-  }
-  
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
 }
