@@ -60,7 +60,7 @@ const placeOrder = async (req, res) => {
         res.json({ success: true, session_url: session.url })
 
     } catch (error) {
-        console.log(error);
+        console.log("ORDER/STRIPE ERROR =>", error.type, "|", error.message, "|", JSON.stringify(error.raw || {}));
         res.json({ success: false, message: "Error" })
 
     }
