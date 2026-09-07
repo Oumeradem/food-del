@@ -2,6 +2,57 @@
     margin: 50px 0px;
 }
 
+/* Thank-you payment confirmation banner */
+.payment-thankyou {
+    text-align: center;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--surface), var(--primary-soft));
+    box-shadow: var(--shadow-md);
+}
+
+.payment-thankyou-icon {
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.payment-thankyou h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.payment-thankyou p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin: 0 auto 24px auto;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.payment-thankyou-close {
+    border: none;
+    padding: 12px 32px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+
+.payment-thankyou-close:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .my-orders .container {
     display: flex;
     flex-direction: column;

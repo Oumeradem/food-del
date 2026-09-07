@@ -15,8 +15,8 @@ const Verify = () => {
         // Send payment result to backend for verification
         const response = await axios.post(url + "/api/order/verify", { success, orderId });
         if (response.data.success) {
-            // Payment confirmed: go to orders page
-            navigate("/myorders")
+            // Payment confirmed: go to orders page with a thank-you message
+            navigate("/myorders", { state: { paymentSuccess: true } })
         }
         else {
             // Payment failed or cancelled: go back to home

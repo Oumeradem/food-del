@@ -3,11 +3,14 @@ import './MyOrders.css'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios';
 import { assets } from '../../assets/assets';
+import { useLocation } from 'react-router-dom';
 
 const MyOrders = () => {
 
     const { url, token } = useContext(StoreContext);
     const [data, setData] = useState([]);
+    const location = useLocation();
+    const [showThanks, setShowThanks] = useState(location.state?.paymentSuccess === true);
 
     const fetchOrders = async () => {
         const response = await axios.post(url + "/api/order/userorders", {}, { headers: { token } });
@@ -19,12 +22,24 @@ const MyOrders = () => {
         if (token) {
             fetchOrders();
         }
+        // Clear the payment success state so the message only shows once
+        if (location.state?.paymentSuccess) {
+            window.history.replaceState({}, document.title)
+        }
     }, [token])
 
 
 
     return (
         <div className='my-orders'>
+            {showThanks && (
+                <div className="payment-thankyou">
+                    <div className="payment-thankyou-icon">✅</div>
+                    <h2>Thank You For Your Payment!</h2>
+                    <p>Your order has been confirmed and is now being processed. You can track its status below.</p>
+                    <button className="payment-thankyou-close" onClick={() => setShowThanks(false)}>Continue</button>
+                </div>
+            )}
             <h2>My Orders</h2>
             <div className="container">
                 {data.map((order, index) => {
@@ -55,6 +70,7 @@ const MyOrders = () => {
 }
 
 export default MyOrders
+
 
 
 
