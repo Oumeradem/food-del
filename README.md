@@ -28,6 +28,8 @@
 - 📦 **Order Tracking** — Real-time order status updates from placed to delivered
 - 🍽️ **Menu Filtering** — Browse dishes by category with animated filter UI
 - 📱 **Responsive Design** — Fully responsive across desktop, tablet, and mobile
+- 🔒 **Production Security** — Secrets rotation, secure env handling, git history scrubbing
+- ⚡ **Error Resilience** — Robust Stripe integration with whitespace tolerance
 
 ---
 
@@ -95,6 +97,30 @@ cd frontend
 npm install
 npm run dev
 ```
+
+---
+
+## 🚀 Production Deployment
+
+This project is **fully deployed and production-ready**:
+
+- **Frontend**: Deployed on [Vercel](https://vercel.com) with automatic deployments from main branch
+- **Backend API**: Deployed on [Render](https://render.com) with environment-based configuration
+- **Database**: MongoDB Atlas with secure connection pooling
+- **Payments**: Stripe production account with webhook verification
+
+### Security Highlights
+✅ All secrets rotated and securely managed via environment variables  
+✅ No hardcoded credentials in codebase (git history scrubbed)  
+✅ JWT tokens with expiration for session management  
+✅ Stripe API integration with error resilience (handles env whitespace)  
+✅ CORS configured for frontend/backend communication  
+
+### Testing in Production
+To test the live app with Stripe:
+1. Register a new account at https://tomato-food-delivery-zeta.vercel.app
+2. Add items to cart and proceed to checkout
+3. Use Stripe test card: **4242 4242 4242 4242** (any future date, any CVC)
 
 ---
 
