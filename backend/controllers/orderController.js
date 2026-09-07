@@ -61,7 +61,8 @@ const placeOrder = async (req, res) => {
 
     } catch (error) {
         console.log("ORDER/STRIPE ERROR =>", error.type, "|", error.message, "|", JSON.stringify(error.raw || {}));
-        res.json({ success: false, message: "Error" })
+        // TEMP: surface real error message to frontend for debugging
+        res.json({ success: false, message: error.message || "Error" })
 
     }
 
