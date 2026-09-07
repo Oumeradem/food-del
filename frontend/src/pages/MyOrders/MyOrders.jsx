@@ -35,7 +35,7 @@ const MyOrders = () => {
             {showThanks && (
                 <div className="payment-thankyou">
                     <div className="payment-thankyou-icon">✅</div>
-                    <h2>Thank You For Your Payment!</h2>
+                    <h2>THANK YOU FOR YOUR PAYMENT!!!</h2>
                     <p>Your order has been confirmed and is now being processed. You can track its status below.</p>
                     <button className="payment-thankyou-close" onClick={() => setShowThanks(false)}>Continue</button>
                 </div>
