@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar/Navbar'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
@@ -8,6 +8,16 @@ import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/Verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
+
+// Scrolls the page to the top whenever the route changes so the
+// home banner (Header) is always visible after navigating.
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App = () => {
 
@@ -20,6 +30,7 @@ const App = () => {
 
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
       <div className='app'>
+        <ScrollToTop />
         <Navbar setShowLogin={setShowLogin}/>
         <Routes>
           < Route path='/' element={<Home />} />
