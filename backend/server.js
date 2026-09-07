@@ -18,11 +18,6 @@ app.use(cors())
 // db connection
 connectDB();
 
-// TEMP DIAGNOSTIC: confirm which env vars are set at runtime (no secrets printed)
-console.log("DIAG STRIPE_SECRET_KEY set:", !!process.env.STRIPE_SECRET_KEY, "len:", String(process.env.STRIPE_SECRET_KEY || "").length);
-console.log("DIAG JWT_SECRET set:", !!process.env.JWT_SECRET, "len:", String(process.env.JWT_SECRET || "").length);
-console.log("DIAG MONGODB_URI set:", !!process.env.MONGODB_URI);
-
 // api endpoints
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
