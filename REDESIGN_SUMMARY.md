@@ -72,7 +72,7 @@ A comprehensive set of CSS custom properties was implemented:
 
 ## Files Modified (13 Total)
 
-```
+```text
 /src/index.css
 /src/components/Navbar/Navbar.css
 /src/components/Header/Header.css
