@@ -1,8 +1,6 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
-
-
-export const StoreContext = createContext(null)
+import { useEffect, useState } from "react";
+import { StoreContext } from "./StoreContext.js";
 
 const StoreContextProvider = (props) => {
 
@@ -106,3 +104,4 @@ const StoreContextProvider = (props) => {
 }
 
 export default StoreContextProvider;
+

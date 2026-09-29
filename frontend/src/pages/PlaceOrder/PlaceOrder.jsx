@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import './PlaceOrder.css'
-import { StoreContext } from '../../context/StoreContext'
+import { StoreContext } from '../../context/StoreContext.js'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -75,7 +75,7 @@ function PlaceOrder() {
       navigate('/cart')
     }
 
-  }, [token])
+  }, [token, getTotalCartAmount, navigate])
 
 
 

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import './MyOrders.css'
-import { StoreContext } from '../../context/StoreContext'
+import { StoreContext } from '../../context/StoreContext.js'
 import axios from 'axios';
 import { assets } from '../../assets/assets';
 import { useLocation } from 'react-router-dom';
@@ -12,21 +12,25 @@ const MyOrders = () => {
     const location = useLocation();
     const [showThanks, setShowThanks] = useState(location.state?.paymentSuccess === true);
 
-    const fetchOrders = async () => {
+    const fetchOrders = useCallback(async () => {
         const response = await axios.post(url + "/api/order/userorders", {}, { headers: { token } });
         setData(response.data.data);
         console.log(response.data.data)
-    }
+    }, [url, token])
 
     useEffect(() => {
         if (token) {
-            fetchOrders();
+            // Fetch orders asynchronously; setState happens inside the promise
+            // callback (.then) so it isn't called synchronously in the effect.
+            axios.post(url + "/api/order/userorders", {}, { headers: { token } })
+                .then((response) => setData(response.data.data))
+                .catch((error) => console.error(error));
         }
         // Clear the payment success state so the message only shows once
         if (location.state?.paymentSuccess) {
             window.history.replaceState({}, document.title)
         }
-    }, [token])
+    }, [token, url, location.state?.paymentSuccess])
 
 
 
