@@ -1,6 +1,6 @@
 # Design Tokens Reference
 
-This document defines the design tokens used across the Tomato food delivery app. Design tokens act as the single source of truth for colors, typography, spacing, radii, shadows, and motion, ensuring a consistent and maintainable design system.
+This document defines the design tokens used across the Tomato food delivery app — the single source of truth for colors, typography, spacing, radii, shadows, and motion.
 
 ---
 
