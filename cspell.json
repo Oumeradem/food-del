@@ -1,0 +1,41 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignoreRegExpList": [
+    "```[\\s\\S]*?```",
+    "https?://[^\\s]+",
+    "[\\w.+-]+@[\\w.-]+\\.[\\w.]+"
+  ],
+  "words": [
+    "MERN",
+    "Vercel",
+    "Render",
+    "JWT",
+    "CORS",
+    "MongoDB",
+    "Mongoose",
+    "Express",
+    "React",
+    "Vite",
+    "Stripe",
+    "Node",
+    "Playwright",
+    "Cucumber",
+    "BDD",
+    "E2E",
+    "Atlas",
+    "Navbar",
+    "FoodItem",
+    "PlaceOrder",
+    "StoreContext",
+    "Webhook",
+    "Oumer",
+    "Adem",
+    "Oumeradem",
+    "adamye",
+    "zeta",
+    "userorders",
+    "WCAG",
+    "rgba"
+  ]
+}

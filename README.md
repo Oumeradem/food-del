@@ -14,9 +14,9 @@
 
 | | |
 |---|---|
-| Live App | https://tomato-food-delivery-zeta.vercel.app |
-| App Repo | https://github.com/Oumeradem/food-del |
-| E2E Test Suite | https://github.com/Oumeradem/food-delivery-tests |
+| Live App | [tomato-food-delivery-zeta.vercel.app](https://tomato-food-delivery-zeta.vercel.app) |
+| App Repo | [github.com/Oumeradem/food-del](https://github.com/Oumeradem/food-del) |
+| E2E Test Suite | [github.com/Oumeradem/food-delivery-tests](https://github.com/Oumeradem/food-delivery-tests) |
 
 ---
 
@@ -134,7 +134,7 @@ This project is fully deployed and production-ready:
 
 To test the live app with Stripe:
 
-1. Register a new account at https://tomato-food-delivery-zeta.vercel.app
+1. Register a new account at [tomato-food-delivery-zeta.vercel.app](https://tomato-food-delivery-zeta.vercel.app)
 2. Add items to the cart and proceed to checkout
 3. Use the Stripe test card **4242 4242 4242 4242** (any future date, any CVC)
 
